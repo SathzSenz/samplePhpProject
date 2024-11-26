@@ -7,3 +7,5 @@ Route::get('/', function () {
 });
 
 Route::resource('vehicle', \App\Http\Controllers\VehicleController::class);
+
+Route::resource('vehicle.maintenance', \App\Http\Controllers\MaintenanceController::class);
