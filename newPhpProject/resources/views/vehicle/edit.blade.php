@@ -1,4 +1,4 @@
-@extends('vehicle.layout')
+@extends('admin.layout')
 
 @section('content')
 
