@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    //
 
     protected $table = 'vehicles';
 
@@ -16,4 +15,9 @@ class Vehicle extends Model
         'year',
         'license_plate',
     ];
+
+    public function maintenance()
+    {
+        return $this->hasMany(Maintenance::class);
+    }
 }
