@@ -1,7 +1,7 @@
-@extends('maintenance.layout')
+@extends('admin.layout')
 
 @section('content')
-    <h1>Edit Maintenance for {{ $vehicle->make }} {{ $vehicle->model }}</h1>
+    <h3>Edit Maintenance for {{ $vehicle->make }} {{ $vehicle->model }} ({{ $vehicle->license_plate }})</h3>
 
     <form action="{{ route('vehicle.maintenance.update', [$vehicle, $maintenance]) }}" method="POST">
         @csrf

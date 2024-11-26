@@ -1,9 +1,9 @@
-@extends('maintenance.layout') <!-- Adjust layout path accordingly -->
+@extends('admin.layout')
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h1>Maintenance Records for {{ $vehicle->make }} {{ $vehicle->model }}</h1>
+            <h3>Maintenance Records for {{ $vehicle->make }} {{ $vehicle->model }} ({{ $vehicle->license_plate }})</h3>
 
             <a href="{{ route('vehicle.maintenance.create', $vehicle) }}" class="btn btn-primary">Add Maintenance Record</a>
         </div>
@@ -27,7 +27,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $maintenance->description }}</td>
                             <td>{{ $maintenance->date }}</td>
-                            <td>${{ number_format($maintenance->cost, 2) }}</td>
+                            <td>Rs. {{ number_format($maintenance->cost, 2) }}</td>
                             <td>
                                 <a href="{{ route('vehicle.maintenance.edit', [$vehicle, $maintenance]) }}" class="btn btn-warning btn-sm">Edit</a>
                                 <form action="{{ route('vehicle.maintenance.destroy', [$vehicle, $maintenance]) }}" method="POST" style="display:inline;">
