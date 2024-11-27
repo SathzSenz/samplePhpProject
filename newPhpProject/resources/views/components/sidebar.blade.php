@@ -5,7 +5,7 @@
     <h2 class="text-center py-3 d-md-none">Dashboard</h2>
     <ul class="nav flex-column">
         <li class="nav-item border-bottom border-light mb-2 mt-2">
-            <a class="nav-link text-white {{ request()->is('dashboard') ? 'active' : '' }}" href="#">Dashboard</a>
+            <a class="nav-link text-white {{ request()->is('dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">Dashboard</a>
         </li>
         <li class="nav-item border-bottom border-light mb-2 mt-2">
             <a class="nav-link text-white {{ request()->routeIs('vehicle.index') ? 'active' : '' }}" href="{{ route('vehicle.index') }}">

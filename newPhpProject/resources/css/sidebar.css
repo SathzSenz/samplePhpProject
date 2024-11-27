@@ -1,0 +1,16 @@
+/* sidebar.css */
+.sidebar .nav-link {
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+.sidebar .nav-link:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+.sidebar .nav-link.active {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
