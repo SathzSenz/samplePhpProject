@@ -30,6 +30,15 @@
                                 <label for="cost">Cost</label>
                                 <input type="number" name="cost" class="form-control" step="0.01" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="mechanic_id">Mechanic</label>
+                                <select name="mechanic_id" class="form-control" required>
+                                    <option value="">Select Mechanic</option>
+                                    @foreach($mechanics as $mechanic)
+                                        <option value="{{ $mechanic->id }}">{{ $mechanic->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-success">Save</button>
                         </form>
                     </div>

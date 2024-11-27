@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
             <!-- Main Content -->
             <div class="col-md-9 main-content">
                 <div class="row mt-4">
