@@ -19,7 +19,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table class="table table-stiped table-bordered">
+                        <table class="table table-striped table-bordered mx-auto text-center">
                             <thead>
                             <tr>
                                 <th>Vehicle Id</th>
@@ -40,10 +40,9 @@
                                     <td>{{ $vehicle->license_plate }}</td>
 
                                     <td>
+                                        <a href="{{ route('vehicle.maintenance.index', $vehicle) }}" class="btn btn-info btn-sm">View Maintenance</a>
                                         <a href="{{ route('vehicle.edit', $vehicle->id) }}" class="btn btn-success">Edit</a>
                                         {{--<a href="{{ route('vehicle.show', $vehicle->id) }}" class="btn btn-info">Show</a>--}}
-                                        <a href="{{ route('vehicle.maintenance.index', $vehicle) }}" class="btn btn-info btn-sm">View Maintenance</a>
-
                                         <form action="{{ route('vehicle.destroy', $vehicle->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')

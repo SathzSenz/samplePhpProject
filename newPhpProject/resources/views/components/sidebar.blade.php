@@ -1,16 +1,16 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
-<div class="col-md-3 col-12 text-white sidebar" style="background-color: #a0aec0">
+<div class="col-md-3 col-12 text-white sidebar" style="background-color: #a0aec0; width: auto">
     <h3 class="text-center py-3 d-none d-md-block">Admin Dashboard</h3>
     <h2 class="text-center py-3 d-md-none">Dashboard</h2>
     <ul class="nav flex-column">
         <li class="nav-item border-bottom border-light mb-2 mt-2">
-            <a class="nav-link text-white {{ request()->is('dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+            <a class="nav-link text-white {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                 <i class="bi bi-card-list" style="margin-right: 4px"></i>
                 Dashboard</a>
         </li>
         <li class="nav-item border-bottom border-light mb-2 mt-2">
-            <a class="nav-link text-white {{ request()->routeIs('vehicle.index') ? 'active' : '' }}" href="{{ route('vehicle.index') }}">
+            <a class="nav-link text-white {{ request()->is('vehicle*') ? 'active' : '' }}" href="{{ route('vehicle.index') }}">
                 <i class="bi bi-car-front-fill" style="margin-right: 4px"></i>
                 Vehicles</a>
         </li>
@@ -36,3 +36,12 @@
         </li>
     </ul>
 </div>
+
+<style>
+    .nav-link.active {
+        background-color: #6c757d; /* Highlight background color */
+        color: #ffffff !important; /* Ensure text is visible */
+        border-radius: 5px; /* Optional for a rounded look */
+        font-weight: bold; /* Make it stand out */
+    }
+</style>
