@@ -18,18 +18,18 @@
         }
 
         .main-content {
-            margin-left: 25%;
+            margin-left: 20%;
             padding: 20px;
         }
 
 
         .header {
-            margin-left: 25%;
-            padding: 20px;
+            margin-left: 15%;
+            padding: 10px;
             background-color: rgba(217, 217, 218, 0.8);
             z-index: 999;
             position: relative;
-            width: calc(100% - 25%);
+            width: 100%;
         }
 
         @media (max-width: 768px) {
