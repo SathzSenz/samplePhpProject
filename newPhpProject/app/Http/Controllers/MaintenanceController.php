@@ -39,12 +39,14 @@ class MaintenanceController extends Controller
      */
     public function store(Request $request, Vehicle $vehicle)
     {
+        //validate data
         $request->validate([
             'description' => 'required|string|max:255',
             'date'=> 'required|date',
             'cost'=> 'required|numeric|min:0',
         ]);
 
+        //creates new maintenance record for the given vehicle
         $vehicle->maintenance()->create($request->all());
 
         return redirect()->route('vehicle.maintenance.index', $vehicle)->with('success', 'Maintenance record added successfully');
@@ -71,12 +73,14 @@ class MaintenanceController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle, Maintenance $maintenance)
     {
+        //validates input data
         $request->validate([
             'description' => 'required|string|max:255',
             'date'=> 'required|date',
             'cost'=> 'required|numeric|min:0',
         ]);
 
+        //updates maintenance record
         $maintenance->update($request->all());
 
         return redirect()->route('vehicle.maintenance.index', $vehicle)->with('success', 'Maintenance record updated successfully');
@@ -87,6 +91,7 @@ class MaintenanceController extends Controller
      */
     public function destroy(Vehicle $vehicle, Maintenance $maintenance)
     {
+        //deletes maintenance record
         $maintenance->delete();
 
         return redirect()->route('vehicle.maintenance.index', $vehicle)->with('success', 'Maintenance record deleted successfully');

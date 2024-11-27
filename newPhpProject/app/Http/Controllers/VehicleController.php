@@ -31,6 +31,7 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        //validate data
         $request->validate([
             'make' => 'required',
             'model' => 'required',
@@ -38,6 +39,7 @@ class VehicleController extends Controller
             'license_plate' => 'required',
         ]);
 
+        //create vehicle record
         Vehicle::create($request->all());
         return redirect()->route('vehicle.index')->with('success', 'Vehicle added successfully.');
     }
@@ -60,6 +62,7 @@ class VehicleController extends Controller
 
     public function update(Request $request, Vehicle $vehicle)
     {
+        //validate input data
         $request->validate([
             'make' => 'required',
             'model' => 'required',
@@ -67,12 +70,14 @@ class VehicleController extends Controller
             'license_plate' => 'required',
         ]);
 
+        //update vehicle record
         $vehicle->update($request->all());
         return redirect()->route('vehicle.index')->with('success', 'Vehicle updated successfully.');
     }
 
     public function destroy(Vehicle $vehicle)
     {
+        //delete vehicle record
         $vehicle->delete();
         return redirect()->route('vehicle.index')->with('success', 'Vehicle deleted successfully.');
     }

@@ -12,6 +12,7 @@ class MechanicController extends Controller
      */
     public function index()
     {
+        //retrieving all mechanics
         $mechanics = Mechanic::all();
         return view('mechanics.index', compact('mechanics'));
     }
@@ -29,6 +30,7 @@ class MechanicController extends Controller
      */
     public function store(Request $request)
     {
+        //validate input data
         $request->validate([
             'name' => 'required',
             'phone' => 'required|numeric',
@@ -36,6 +38,7 @@ class MechanicController extends Controller
             'email' => 'required',
         ]);
 
+        //create mechanic record
         Mechanic::create($request->all());
 
         return redirect()->route('mechanics.index')->with('success', 'Mechanic created successfully.');
@@ -62,6 +65,7 @@ class MechanicController extends Controller
      */
     public function update(Request $request, Mechanic $mechanic)
     {
+        //validates data
         $request->validate([
             'name' => 'required|string',
             'phone' => 'required|numeric',
@@ -69,6 +73,7 @@ class MechanicController extends Controller
             'email' => 'required\string',
         ]);
 
+        //updates mechanic record
         $mechanic->update($request->all());
 
         return redirect()->route('mechanics.index')->with('success', 'Mechanic updated successfully.');
