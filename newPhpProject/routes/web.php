@@ -12,4 +12,6 @@ Route::get('/dashboard', function () {
 
 Route::resource('vehicle', \App\Http\Controllers\VehicleController::class);
 
+Route::resource('mechanics', \App\Http\Controllers\MechanicController::class);
+
 Route::resource('vehicle.maintenance', \App\Http\Controllers\MaintenanceController::class);
