@@ -15,7 +15,7 @@ class MaintenanceController extends Controller
     public function index(Vehicle $vehicle)
     {
         // Retrieve maintenance records for the specific vehicle
-        $maintenances = $vehicle->maintenance;
+        $maintenances = $vehicle->maintenance()->with('mechanic')->get();
 
         // Pass data to the view
         return view('maintenance.index', compact('vehicle', 'maintenances'));
@@ -65,7 +65,9 @@ class MaintenanceController extends Controller
      */
     public function edit(Vehicle $vehicle, Maintenance $maintenance)
     {
-        return view('maintenance.edit', compact('vehicle','maintenance'));
+        //retrieve all mechanics
+        $mechanics = Mechanic::all();
+        return view('maintenance.edit', compact('vehicle','maintenance', 'mechanics'));
     }
 
     /**

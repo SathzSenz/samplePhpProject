@@ -33,6 +33,7 @@
                             <th>Description</th>
                             <th>Date</th>
                             <th>Cost</th>
+                            <th>Mechanic Assigned</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -43,6 +44,7 @@
                                 <td>{{ $maintenance->description }}</td>
                                 <td>{{ $maintenance->date }}</td>
                                 <td>Rs. {{ number_format($maintenance->cost, 2) }}</td>
+                                <td>{{ $maintenance->mechanic->name ?? 'Not Assigned' }}</td>
                                 <td class="d-flex justify-content-center align-items-center">
                                     <a
                                         href="{{ route('vehicle.maintenance.edit', [$vehicle, $maintenance]) }}"

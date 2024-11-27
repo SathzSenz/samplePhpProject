@@ -25,6 +25,17 @@
                                 <label for="cost">Cost</label>
                                 <input type="number" name="cost" class="form-control" value="{{ $maintenance->cost }}" step="0.01" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="mechanic_id" class="form-label">Mechanic</label>
+                                <select class="form-select" id="mechanic_id" name="mechanic_id" required>
+                                    <option value="">Select a mechanic</option>
+                                    @foreach ($mechanics as $mechanic)
+                                        <option value="{{ $mechanic->id }}" {{ $maintenance->mechanic_id == $mechanic->id ? 'selected' : '' }}>
+                                            {{ $mechanic->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-success">Update</button>
                         </form>
                     </div>
