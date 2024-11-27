@@ -13,6 +13,7 @@ class Maintenance extends Model
         'description',
         'date',
         'cost',
+        'mechanic_id',
     ];
 
     //function defining this model belongs to vehicle model

@@ -16,6 +16,7 @@ class Vehicle extends Model
         'license_plate',
     ];
 
+    //function defining vehicle has many maintenances
     public function maintenance()
     {
         return $this->hasMany(Maintenance::class);

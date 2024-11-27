@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Maintenance;
+use App\Models\Mechanic;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,11 @@ class MaintenanceController extends Controller
      */
     public function create(Vehicle $vehicle)
     {
-        return view('maintenance.create', compact('vehicle'));
+
+        //retrieve all mechanics available
+        $mechanics = Mechanic::all();
+
+        return view('maintenance.create', compact('vehicle', 'mechanics'));
     }
 
     /**
