@@ -41,7 +41,7 @@
 
                                     <td>
                                         <a href="{{ route('vehicle.edit', $vehicle->id) }}" class="btn btn-success">Edit</a>
-                                        <a href="{{ route('vehicle.show', $vehicle->id) }}" class="btn btn-info">Show</a>
+                                        {{--<a href="{{ route('vehicle.show', $vehicle->id) }}" class="btn btn-info">Show</a>--}}
                                         <a href="{{ route('vehicle.maintenance.index', $vehicle) }}" class="btn btn-info btn-sm">View Maintenance</a>
 
                                         <form action="{{ route('vehicle.destroy', $vehicle->id) }}" method="POST" class="d-inline">

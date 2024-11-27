@@ -1,31 +1,29 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <!-- Main Content -->
-            <div class="col-md-9 main-content">
-                <div class="row mt-4">
+    <div class="container-fluid mt-6">
+        <div class="row ">
+                <div class="row justify-content-between">
                     <!-- Card 1 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <div class="card text-center shadow">
                             <div class="card-body">
-                                <h5 class="card-title">Total Users</h5>
+                                <h5 class="card-title">Total Vehicles</h5>
                                 <p class="card-text display-4">150</p>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <div class="card text-center shadow">
                             <div class="card-body">
-                                <h5 class="card-title">New Signups</h5>
+                                <h5 class="card-title">Total Maintenances</h5>
                                 <p class="card-text display-4">25</p>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <div class="card text-center shadow">
                             <div class="card-body">
                                 <h5 class="card-title">Total Revenue</h5>
@@ -34,26 +32,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row mt-5">
-                    <!-- Recent Activity -->
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Recent Activity</h5>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item">User John Doe updated their profile</li>
-                                    <li class="list-group-item">New user Jane Smith signed up</li>
-                                    <li class="list-group-item">Admin added new settings</li>
-                                    <li class="list-group-item">Monthly revenue report generated</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
