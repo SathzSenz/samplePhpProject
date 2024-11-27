@@ -24,7 +24,8 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        @include('components.sidebar') <!-- Include the Sidebar -->
+        @include('components.sidebar')
+        @include('components.header')
         <div class="col-md-9 col-12 main-content">
             <h2 class="text-center mb-4">Vehicle Maintenance System</h2>
             @yield('content')
