@@ -9,16 +9,46 @@
         .sidebar {
             height: 100vh;
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            z-index: 1000;
         }
+
         .main-content {
-            margin-left: 0;
+            margin-left: 25%;
             padding: 20px;
         }
-        @media (min-width: 768px) {
+
+
+        .header {
+            margin-left: 25%;
+            padding: 20px;
+            background-color: rgba(217, 217, 218, 0.8);
+            z-index: 999;
+            position: relative;
+            width: calc(100% - 25%);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
             .main-content {
-                margin-left: 25%;
+                margin-left: 0;
+            }
+
+            .header {
+                margin-left: 0;
+                width: 100%;
             }
         }
+
     </style>
 </head>
 <body>
