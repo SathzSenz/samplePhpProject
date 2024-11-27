@@ -1,17 +1,23 @@
 @extends('admin.layout')
 
 @section('content')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <div class="p-8 mb-2">
+        <a style="background-color: rgba(224, 224, 224, 0.8); color: white; padding: 5px; border-radius: 5px;" href="{{ route('vehicle.index') }}">
+            <i class="bi bi-arrow-left @" style="color: black"></i>
+        </a>
+    </div>
     <div class="card">
         <div class="card-header">
-            <h3>Maintenance Records for {{ $vehicle->make }} {{ $vehicle->model }} ({{ $vehicle->license_plate }})</h3>
-
-            <a href="{{ route('vehicle.maintenance.create', $vehicle) }}" class="btn btn-primary">Add Maintenance Record</a>
+            <h4 class="pt-2 pb-2">Maintenance Records for {{ $vehicle->make }} {{ $vehicle->model }} ({{ $vehicle->license_plate }})
+                <a href="{{ route('vehicle.maintenance.create', $vehicle) }}" class="btn btn-primary float-end">Add Maintenance Record</a>
+            </h4>
         </div>
         @if ($maintenances->isEmpty())
             <p class="mt-4">No maintenance records found for this vehicle.</p>
         @else
             <div class="card-body">
-                <table class="table mt-4">
+                <table class="table mt-2">
                     <thead>
                     <tr>
                         <th>#</th>
